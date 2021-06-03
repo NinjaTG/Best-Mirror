@@ -8,8 +8,8 @@ from bot import dispatcher
  
  
 @new_thread
-def cloneNode(update,context):
-    args = update.message.text.split(" ",maxsplit=1)
+def cloneNode(update, context):
+    args = update.message.text.split(" ", maxsplit=1)
     if update.message.from_user.username:
         uname = f"@{update.message.from_user.username}"
     else:
@@ -23,9 +23,9 @@ def cloneNode(update,context):
         result, button = gd.clone(link)
         deleteMessage(context.bot,msg)
         if button == "":
-            sendMessage(result,context.bot,update)
+            sendMessage(result, context.bot, update)
         else:
-            sendMarkup(result + cc,context.bot,update,button)
+            sendMarkup(result + cc, context.bot, update, button)
     else:
         sendMessage("Dammnn 😒😐 \nProvide Google Drive Shareable Link For Clone 🌝\n\n📢 𝐄𝐱𝐚𝐦𝐩𝐥𝐞:\n <code>/clone your Google drive Link</code>\n\n💡 For More Help Join Support Group\n 📨 @MaxxBotChat",context.bot,update)
  
