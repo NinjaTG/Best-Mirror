@@ -118,7 +118,7 @@ class GoogleDriveHelper:
         except HttpError as err:
             LOGGER.error(str(err))
             if "File not found" in str(err):
-                msg = "<b>No such file exist🙂</b>"
+                msg = "<b>No such file exist 🙂</b>"
             else:
                 msg = "Something went wrong check log"
         finally:
@@ -332,7 +332,7 @@ class GoogleDriveHelper:
                 dir_id = self.create_directory(meta.get('name'), parent_id)
                 result = self.cloneFolder(meta.get('name'), meta.get('name'), meta.get('id'), dir_id)
                 msg += f'<b>📗 FileName: </b><code>{meta.get("name")}</code>\n\n<b>📀 Total Size:</b> <code>〘{get_readable_file_size(self.transferred_size)}〙</code>'
-                msg += f'\n\n<b>Type: </b>Folder'
+                msg += f'\n\n<b>Type:</b> Folder'
                 msg += f'\n<b>SubFolders:</b> <code>〘{self.total_folders}〙</code>'
                 msg += f'\n<b>Files:</b> <code>〘{self.total_files}〙</code>'
                 durl = self.__G_DRIVE_DIR_BASE_DOWNLOAD_URL.format(dir_id)
@@ -358,7 +358,7 @@ class GoogleDriveHelper:
                     buttons.buildbutton(f"{BUTTON_FIVE_NAME}", f"{BUTTON_FIVE_URL}")
             else:
                 file = self.copyFile(meta.get('id'), parent_id)
-                msg += f'<b>Filename: </b><code>{file.get("name")}</code>'
+                msg += f'<b>📗 FileName</b> <code>{file.get("name")}</code>'
                 durl = self.__G_DRIVE_BASE_DOWNLOAD_URL.format(file.get("id"))
                 buttons = button_build.ButtonMaker()
                 if SHORTENER is not None and SHORTENER_API is not None:
@@ -371,8 +371,8 @@ class GoogleDriveHelper:
                 except:
                     typeee = 'File' 
                 try:
-                    msg += f'\n<b>Size: </b><code>{get_readable_file_size(int(meta.get("size")))}</code>'
-                    msg += f'\n\n<b>Type: </b>{typeee}'
+                    msg += f'\n<b>Size:</b> <code>{get_readable_file_size(int(meta.get("size")))}</code>'
+                    msg += f'\n\n<b>Type:</b> <code>{typeee}</code>'
                 except TypeError:
                     pass
                 if INDEX_URL is not None:
@@ -506,9 +506,9 @@ class GoogleDriveHelper:
                     content += f'<b> | <a href="https://telegra.ph/{self.path[nxt_page]}">Next</a></b>'
                     nxt_page += 1
             Telegraph(access_token=telegraph_token).edit_page(path = self.path[prev_page],
-                                 title = '𝗠𝗔𝗫𝗫 𝗥𝗜𝗗𝗘𝗥',
-                                 author_name='𝗠𝗮𝘅𝘅𝗥𝗶𝗱𝗲𝗿',
-                                 author_url='https://t.me/MaxxBots',
+                                 title = '𝐍𝐒 𝐌𝐈𝐑𝐑𝐎𝐑',
+                                 author_name='𝐍𝐒 𝐌𝐈𝐑𝐑𝐎𝐑',
+                                 author_url='https://t.me/𝐍𝐬𝐌𝐢𝐫𝐫𝐨𝐫𝐙𝐨𝐧𝐞',
                                  html_content=content)
         return
 
@@ -585,9 +585,9 @@ class GoogleDriveHelper:
 
             for content in self.telegraph_content :
                 self.path.append(Telegraph(access_token=telegraph_token).create_page(
-                                                        title = '𝗠𝗔𝗫𝗫 𝗥𝗜𝗗𝗘𝗥',
-                                                        author_name='𝗠𝗮𝘅𝘅𝗕𝗼𝘁𝘀',
-                                                        author_url='https://t.me/Maxxbots',
+                                                        title = '𝐍𝐒 𝐌𝐈𝐑𝐑𝐎𝐑',
+                                                        author_name='𝐍𝐒 𝐌𝐈𝐑𝐑𝐎𝐑',
+                                                        author_url='https://t.me/𝐍𝐬𝐌𝐢𝐫𝐫𝐨𝐫𝐙𝐨𝐧𝐞',
                                                         html_content=content
                                                         )['path'])
 
