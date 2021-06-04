@@ -27,7 +27,7 @@ def cloneNode(update, context):
         else:
             sendMarkup(result + cc, context.bot, update, button)
     else:
-        sendMessage("Dammnn 😒😐 \nProvide Google Drive Shareable Link For Clone 🌝\n\n📢 𝐄𝐱𝐚𝐦𝐩𝐥𝐞:\n <code>/clone your Google drive Link</code>\n\n💡 For More Help Join Support Group\n 📨 @MaxxBotChat",context.bot,update)
+        sendMessage("Dammnn 😒😐 \nProvide Google Drive Shareable Link For Clone 🌝\n\n📢 𝐄𝐱𝐚𝐦𝐩𝐥𝐞:\n <code>/copy{BotName} your Google drive Link</code>\n\n💡 For More Help Join Support Group\n 📨 @Ns_Bot_supporters ",context.bot,update)
  
 clone_handler = CommandHandler(BotCommands.CloneCommand,cloneNode,filters=CustomFilters.authorized_chat | CustomFilters.authorized_user)
 dispatcher.add_handler(clone_handler)
