@@ -31,7 +31,7 @@ class AriaDownloadHelper(DownloadHelper):
             gdrive = GoogleDriveHelper(None)
             smsg, button = gdrive.drive_list(sname)
           if smsg:
-              dl.getListener().onDownloadError(f'𝙁𝙞𝙡𝙚 𝙞𝙨 𝙖𝙡𝙧𝙚𝙖𝙙𝙮 𝙖𝙫𝙖𝙞𝙡𝙖𝙗𝙡𝙚 𝙞𝙣 𝙤𝙪𝙧 𝘿𝙧𝙞𝙫𝙚.😡\n𝙎𝙤 𝘽𝙚𝙛𝙤𝙧𝙚 𝙈𝙞𝙧𝙧𝙤𝙧 𝙮𝙤𝙪𝙧 𝙁𝙞𝙡𝙚𝙨! 𝙢𝙪𝙨𝙩 𝙎𝙚𝙖𝙧𝙘𝙝 🔎.\n\n')
+              dl.getListener().onDownloadError(f'𝙁𝙞𝙡𝙚 𝙞𝙨 𝙖𝙡𝙧𝙚𝙖𝙙𝙮 𝙖𝙫𝙖𝙞𝙡𝙖𝙗𝙡𝙚 𝙞𝙣 𝙤𝙪𝙧 𝘿𝙧𝙞𝙫𝙚.😡\n\nSo First Search 🔎 Before anything MIRROR.\n\n')
               sendMarkup("Here are the search results:", dl.getListener().bot, dl.getListener().update, button)
               aria2.remove([download])
               return
@@ -40,7 +40,7 @@ class AriaDownloadHelper(DownloadHelper):
         if ENABLE_FILESIZE_LIMIT:
           if size / 1024 / 1024 / 1024 > MAX_TORRENT_SIZE:
               LOGGER.info(f"Download size Exceeded: {gid}")
-              dl.getListener().onDownloadError(f'📀 <b>Your File size</b>:\n➩ 〘<code>{get_readable_file_size(size)}〙</code>\n\n🏷️<b> Mirror Limit</b>: <code>{MAX_TORRENT_SIZE}GB</code>')
+              dl.getListener().onDownloadError(f'📀 𝗙𝗶𝗹𝗲 𝗦𝗶𝘇𝗲:\n➩ 〘{get_readable_file_size(size)}〙\n\n🏷️ 𝗠𝗶𝗿𝗿𝗼𝗿 𝗟𝗶𝗺𝗶𝘁: {MAX_TORRENT_SIZE}GB')
               aria2.remove([download])
               return
         update_all_messages()
