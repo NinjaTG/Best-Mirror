@@ -4,10 +4,10 @@ from telegram.update import Update
 import psutil, shutil
 import time
 from bot import AUTO_DELETE_MESSAGE_DURATION, LOGGER, bot, \
-    status_reply_dict, status_reply_dict_lock, download_dict, download_dict_lock
-from bot.helper.ext_utils.bot_utils import get_readable_message, get_readable_file_size, MirrorStatus
+    status_reply_dict, status_reply_dict_lock, download_dict, download_dict_lock, botStartTime
+from bot.helper.ext_utils.bot_utils import get_readable_message, get_readable_file_size, get_readable_time, MirrorStatus
 from telegram.error import TimedOut, BadRequest
-
+ 
 
 def sendMessage(text: str, bot, update: Update):
     try:
@@ -68,8 +68,8 @@ def delete_all_messages():
 
 def update_all_messages():
     total, used, free = shutil.disk_usage('.')
-    used = get_readable_file_size(used)
     free = get_readable_file_size(free)
+    currentTime = get_readable_time(time.time() - botStartTime)
     msg = get_readable_message()
     msg += f"<b>✥════ @TGFilmZone ════✥</b>"
     #msg += f"<b>CPU:</b> {psutil.cpu_percent()}%" \
@@ -107,7 +107,7 @@ def update_all_messages():
 
 def sendStatusMessage(msg, bot):
     total, used, free = shutil.disk_usage('.')
-    used = get_readable_file_size(used)
+    currentTime = get_readable_time(time.time() - botStartTime)
     free = get_readable_file_size(free)
     progress = get_readable_message()
     progress += f"😾"
