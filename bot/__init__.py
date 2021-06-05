@@ -256,6 +256,8 @@ except KeyError:
     SHORTENER_API = None
 try:
     IMAGE_URL = getConfig('IMAGE_URL')
+    if len(IMAGE_URL) == 0:
+        IMAGE_URL = 'https://telegra.ph/file/188918d5458933641ee26.jpg'
 except KeyError:
     IMAGE_URL = 'https://telegra.ph/file/188918d5458933641ee26.jpg.jpg'
 
