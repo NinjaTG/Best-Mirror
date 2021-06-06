@@ -573,9 +573,9 @@ class GoogleDriveHelper:
                         if SHORTENER is not None and SHORTENER_API is not None:
                             siurl = requests.get(f'https://{SHORTENER}/api?api={SHORTENER_API}&url={url}&format=text').text
                             siurls = requests.get(f'https://{SHORTENER}/api?api={SHORTENER_API}&url={urls}&format=text').text
-                            msg += f' <b>| <a href="{siurl}">𝗜𝗡𝗗𝗘𝗫 𝗟𝗜𝗡𝗞 📦</a></b> <b>| <a href="{siurls}">View Link</a></b>'
+                            msg += f' <b>| <a href="{siurl}">𝗜𝗡𝗗𝗘𝗫 𝗟𝗜𝗡𝗞 📦</a></b> <b>| <a href="{siurls}">𝗪𝗔𝗧𝗖𝗛 📽️</a></b>'
                         else:
-                            msg += f' <b>| <a href="{url}">𝗜𝗡𝗗𝗘𝗫 𝗟𝗜𝗡𝗞 📦</a></b> <b>| <a href="{urls}">View Link</a></b>'
+                            msg += f' <b>| <a href="{url}">𝗜𝗡𝗗𝗘𝗫 𝗟𝗜𝗡𝗞 📦</a></b> <b>| <a href="{urls}">𝗪𝗔𝗧𝗖𝗛 📽️</a></b>'
                 msg += '<br><br>'
                 content_count += 1
                 if content_count == TELEGRAPHLIMIT :
